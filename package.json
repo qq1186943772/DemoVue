@@ -14,6 +14,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ajv": "^6.7.0",
+    "ajv-keywords": "^3.3.0",
     "axios": "^0.18.0",
     "iview": "^3.2.2",
     "vue": "^2.5.2",
@@ -85,5 +87,18 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qq1186943772/DemoVue.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qq1186943772/DemoVue/issues"
+  },
+  "homepage": "https://github.com/qq1186943772/DemoVue#readme"
 }

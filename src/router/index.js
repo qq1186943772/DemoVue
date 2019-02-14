@@ -4,12 +4,20 @@ import login from '@/view/login/login'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'login',
       component: login
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: () => import('@/view/home/home')
     }
   ]
 })
+
+export default router

@@ -40,8 +40,8 @@
               <Input :model="form.test" type="textarea" :autosize="{minRows: 2,maxRows: 5}" />
             </FormItem>
             <FormItem>
-              <Button type="primary">Submit</Button>
-              <Button style="margin-left: 8px">Cancel</Button>
+              <Button type="primary" :loading="isLoad">Submit</Button>
+              <Button style="margin-left: 8px" v-on:click="login">Cancel</Button>
             </FormItem>
           </i-form>
         </Card>
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+// import router from '@/router/index'
 export default {
   name: 'login',
   data () {
@@ -59,7 +60,13 @@ export default {
         input: '',
         select: '',
         silder: [0, 100]
-      }
+      },
+      isLoad: false
+    }
+  },
+  methods: {
+    login () {
+      this.$router.push({name: 'home'})
     }
   }
 }
