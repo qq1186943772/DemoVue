@@ -18,8 +18,22 @@ const router = new Router({
       component: () => import('@/view/home/home'),
       children: [
         {
-          path: '/user_list',
-          component: () => import('@/view/system/user')
+          path: '/system_menu',
+          name: 'system',
+          component: () => import('@/view/home/menu'),
+          children: [
+            {
+              path: '/user_list',
+              name: 'user',
+              component: () => import('@/view/system/user')
+            },
+            {
+              path: '/role_list',
+              name: 'role',
+              component: () => import('@/view/system/role')
+            }
+          ]
+
         }
       ]
     }
