@@ -15,7 +15,13 @@ const router = new Router({
     {
       path: '/home',
       name: 'home',
-      component: () => import('@/view/home/home')
+      component: () => import('@/view/home/home'),
+      children: [
+        {
+          path: '/user_list',
+          component: () => import('@/view/system/user')
+        }
+      ]
     }
   ]
 })

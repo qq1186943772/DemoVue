@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Layout>
+    <Layout class="home-layout">
       <Header>
         <Menu mode="horizontal" theme="dark" active-name="1">
             <div class="layout-logo"></div>
@@ -23,16 +23,16 @@
               </MenuItem>
             </div>
         </Menu>
-    </Header>
-    <Layout>
-        <Sider hide-trigger :style="{background: '#fff'}">
-          <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
+      </Header>
+      <Layout class="conter-layout">
+        <Sider hide-trigger class="Sider">
+          <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']" class="sider-menu">
             <Submenu name="1">
               <template slot="title">
                 <Icon type="ios-navigate"></Icon>
                 Item 1
               </template>
-              <MenuItem name="1-1">Option 1</MenuItem>
+              <MenuItem name="1-1"> <router-link to="/user_list">用户列表</router-link></MenuItem>
               <MenuItem name="1-2">Option 2</MenuItem>
               <MenuItem name="1-3">Option 3</MenuItem>
             </Submenu>
@@ -56,12 +56,10 @@
         </Sider>
         <Layout :style="{padding: '0 24px 24px'}">
           <Breadcrumb :style="{margin: '24px 0'}">
-            <BreadcrumbItem>Home</BreadcrumbItem>
-            <BreadcrumbItem>Components</BreadcrumbItem>
-            <BreadcrumbItem>Layout</BreadcrumbItem>
+            <p>菜单项</p>
           </Breadcrumb>
           <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-              Content
+              <router-view></router-view>
           </Content>
         </Layout>
       </Layout>
@@ -77,6 +75,8 @@ export default {
 
 <style scoped>
 .layout{
+  width: 100%;
+  height: 100%;
   border: 1px solid #d7dde4;
   background: #f5f7f9;
   position: relative;
@@ -97,5 +97,22 @@ export default {
   width: 420px;
   margin: 0 auto;
   margin-right: 20px;
+}
+.Sider{
+  background: '#000';
+  height: 100%;
+}
+.sider-menu{
+  background: '#000';
+  width: 100%;
+  height: 100%;
+}
+.conter-layout{
+  width: 100%;
+  height: 100%;
+}
+.home-layout{
+  width: 100%;
+  height: 100%;
 }
 </style>
