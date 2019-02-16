@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import router from '@/router'
+router.push({path: 'user_list'})
 export default {
   name: 'menu'
 }

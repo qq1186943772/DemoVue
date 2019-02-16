@@ -32,9 +32,12 @@
 </template>
 
 <script>
+import router from '@/router'
+router.push({path: 'system_menu'})
 export default {
   name: 'home'
 }
+
 </script>
 
 <style scoped>
